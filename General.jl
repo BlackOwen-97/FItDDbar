@@ -75,9 +75,9 @@ function FootballC_unequal(qMeV, m1MeV, m2MeV, f0MeV)
         mm2p = m12 + m22;  mm2m = m12 - m22
         logm = (m1 != m2) ? log(m1 / m2) : 0.0
 
-        V0 = -0.5 * mm2m^2 / q^2 \
-             - 0.5 * mm2m * (mm2m^2 + 3*mm2p*q^2) * logm / q^4 \
-             + w^2 * L
+        V0 = (-0.5 * mm2m^2 / q^2
+              - 0.5 * mm2m * (mm2m^2 + 3*mm2p*q^2) * logm / q^4
+              + w^2 * L)
     end
 
     return C0 * V0 / 10^6
