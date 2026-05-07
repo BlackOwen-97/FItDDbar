@@ -1,5 +1,11 @@
 using IMinuit
 
+if !isdefined(@__MODULE__, :goalminnicedipole)
+    function goalminnicedipole(para, lam)
+        error("goalminnicedipole(para, lam) is not defined for a concrete data set; define it before calling fitpara.")
+    end
+end
+
 function make_goal(lam; every::Int=10, logio::Union{Nothing,IO}=nothing)
     neval = Ref(0)
 
